@@ -201,5 +201,4 @@ class Polynomial:
 
 
 if __name__ == "__main__":
-    x = Polynomial(9,6,-3)
-    print(x.compute(2))
+    pass
