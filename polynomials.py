@@ -197,6 +197,12 @@ class Polynomial:
             return f"Zero at ({(-1*self.coefficients[-1])/self.coefficients[0]},0.0)"
             #if it can't be simplified to a quadratic and a zero term
         raise Exception("Sorry, degree too high.")
+    def get_parabola_vertex(self):
+        if self.deg != 2:
+            raise ValueError("Only parabolas have a single vertex")
+        vertex_x = -self.coefficients[1]/(2*self.coefficients[0])
+        return f"Vertex at ({vertex_x},{self.compute(vertex_x)})"
+
 
 
 if __name__ == "__main__":
