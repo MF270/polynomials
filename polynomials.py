@@ -202,6 +202,13 @@ class Polynomial:
             raise ValueError("Only parabolas have a single vertex")
         vertex_x = -self.coefficients[1]/(2*self.coefficients[0])
         return f"Vertex at ({vertex_x},{self.compute(vertex_x)})"
+    def get_parabola_vertex(self):
+        if self.deg != 2:
+            raise ValueError("Only parabolas have a single vertex")
+        vertex_x = -self.coefficients[1]/(2*self.coefficients[0])
+        return f"Vertex at ({vertex_x},{self.compute(vertex_x)})"
+
+
 
 
 
