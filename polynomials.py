@@ -56,25 +56,25 @@ class Polynomial:
             if coeff > 0 and coeff != 1:
                 if ind == 0:
                     output += f"{coeff}"
-                    continue
-                output += f"+{coeff}"
+                else:
+                    output += f" + {coeff}"
                 #positive coefficients
             elif coeff == 1:
                 if ind != 0:
-                    output += "+"
+                    output += " + "
                 if ind == (len(self.coefficients)-1):
                     output += "1"
                 #Only shows 1 if it's a constant
             elif coeff < 0 and not coeff == -1:
-                output += f"-{abs(coeff)}"
+                output += f" - {abs(coeff)}"
                 #negative coefficients
             elif coeff == -1:
-                output += "-"
+                output += " - "
                 #-1
                 if ind == (len(self.coefficients)-1):
                     output += "1"
                 #-1 for constants
-            if exp not in (0,1):
+            if exp > 1:
                 #Will only write an exponent if it's >1
                 output += f"{self.var}^{exp}"
             elif exp == 1:
@@ -213,4 +213,5 @@ class Polynomial:
 
 
 if __name__ == "__main__":
-    pass
+    x = Polynomial(5,3,1)
+    print(x.coefficients,x,sep="\n")
